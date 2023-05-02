@@ -1,16 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Tasks from './Tasks'
-import TodoLost from './TodoLost'
+
 import { Body } from './microtasks/Monday/Week 1/Task1/site/Body'
 import { Header } from './microtasks/Monday/Week 1/Task1/site/Header'
 import { Footer } from './microtasks/Monday/Week 1/Task1/site/Footer'
 import { Microtasks } from './microtasks/Microtasks'
+import { Todolist } from './Todolist'
 
-// Hi Guys!
-// Let's reinforce our current session!
-// -You have 2 arrays. You should create a new component TASKS, where you will render these arrays.
-// -Don't forget to assign types to our data.
 export type DataProp = {
 	title: string
 	tasks: tasksProps[]
@@ -137,10 +134,23 @@ function App() {
 			'Micheal Talbot95',
 		],
 	}
+	const [tasks, setTasks] = useState([
+		{ id: 1, title: 'HTML&CSS', isDone: true }, //0
+		{ id: 2, title: 'JS', isDone: true }, //1
+		{ id: 3, title: 'ReactJS', isDone: false }, //2
+		{ id: 4, title: 'ReactJS2', isDone: false },
+	])
+	const removeTask = (taskID: number) => {
+		setTasks(tasks.filter((el) => el.id !== taskID))
+	}
 
 	return (
 		<div className="App">
-			<TodoLost />
+			<Todolist
+				title={'What to learn'}
+				tasks={tasks}
+				removeTask={removeTask}
+			/>
 			{/*<Tasks data={data1} />*/}
 			{/*<Tasks data={data2} />*/}
 			<Microtasks />
