@@ -10,8 +10,7 @@
     "@types/node": "^16.18.1",
     "@types/react": "^18.0.23",
     "@types/react-dom": "^18.0.7",
-    "@types/uuid": "^9.0.1",
-    "axios": "^1.4.0",
+    "@types/uuid": "^8.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -42,8 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@formkit/auto-animate": "^1.0.0-beta.6"
   }
 }
