@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState } from 'react'
 import s from './styles/EditableSpan.module.css'
-import { log } from 'util'
+
+import { TextField } from '@mui/material'
 
 export type EditableSpanProps = {
 	title: string
@@ -24,7 +25,9 @@ export const EditableSpan: React.FC<EditableSpanProps> = (props) => {
 	return (
 		<>
 			{editMode ? (
-				<input
+				<TextField
+					size={'small'}
+					variant={'standard'}
 					value={value}
 					autoFocus
 					onChange={onChangeHandler}

@@ -1,6 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
 import s from './styles/AddNewForm.module.css'
-
+import AddBoxIcon from '@mui/icons-material/AddBox'
+import { Button, Grid, TextField } from '@mui/material'
 interface AddNewFormProps {
 	addNewItem: (title: string) => void
 }
@@ -31,16 +32,23 @@ export const AddNewForm: React.FC<AddNewFormProps> = (props) => {
 	}
 	return (
 		<div>
-			<div>
-				<input
+			<Grid>
+				<TextField
+					placeholder={'Enter the text'}
+					variant={'outlined'}
+					size={'small'}
 					value={title}
 					onChange={onChangeHandler}
 					onKeyPress={onKeyPressHandler}
-					className={error ? 'error' : ''}
+					error={!!error}
+					helperText={error}
+					/*className={error ? 'error' : ''}*/
 				/>
-				<button onClick={addNewItem}>+</button>
-				{error && <div className="error-message">{error}</div>}
-			</div>
+				<Button onClick={addNewItem}>
+					<AddBoxIcon />
+				</Button>
+				{/*	{error && <div className="error-message">{error}</div>}*/}
+			</Grid>
 		</div>
 	)
 }
