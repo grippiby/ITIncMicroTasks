@@ -1,6 +1,5 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
-    <option name="AUTODETECT_INDENTS" value="false" />
     <option name="LINE_SEPARATOR" value="&#10;" />
     <HTMLCodeStyleSettings>
       <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
@@ -31,11 +30,6 @@
       <option name="INTERPOLATION_NEW_LINE_AFTER_START_DELIMITER" value="false" />
       <option name="INTERPOLATION_NEW_LINE_BEFORE_END_DELIMITER" value="false" />
     </VueCodeStyleSettings>
-    <codeStyleSettings language="Gherkin">
-      <indentOptions>
-        <option name="INDENT_SIZE" value="4" />
-      </indentOptions>
-    </codeStyleSettings>
     <codeStyleSettings language="HTML">
       <option name="SOFT_MARGINS" value="80" />
       <indentOptions>
@@ -62,9 +56,6 @@
         <option name="TAB_SIZE" value="4" />
         <option name="USE_TAB_CHARACTER" value="true" />
       </indentOptions>
-    </codeStyleSettings>
-    <codeStyleSettings language="XML">
-      <option name="WRAP_ON_TYPING" value="1" />
     </codeStyleSettings>
   </code_scheme>
 </component>

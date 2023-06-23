@@ -3,8 +3,6 @@ import {
 	AddTodoListAC,
 	ChangeTodoListAC,
 	ChangeTodoListFilterAC,
-	ChangeTodoListFilterAT,
-	ChangeTodoListTitleActionType,
 	RemoveTodoListAC,
 	todolistsReducer,
 } from './todolists-reducer'
@@ -38,7 +36,7 @@ test('correct todolist should be added', () => {
 	//
 	const endState = todolistsReducer(
 		startState,
-		AddTodoListAC(todolistId2, newTodolistTitle)
+		AddTodoListAC(newTodolistTitle)
 	)
 	//
 	expect(endState.length).toBe(3)

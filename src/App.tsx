@@ -22,7 +22,7 @@ export type TodolistType = {
 	filter: FilterValuesType
 }
 
-type TasksStateType = {
+export type TasksStateType = {
 	[key: string]: Array<TaskType>
 }
 
@@ -53,6 +53,7 @@ function App() {
 		// перезапишем в этом объекте массив для нужного тудулиста отфилтрованным массивом:
 		tasks[todolistId] = todolistTasks.filter((t) => t.id != id)
 		// засетаем в стейт копию объекта, чтобы React отреагировал перерисовкой
+
 		setTasks({ ...tasks })
 	}
 
@@ -75,6 +76,7 @@ function App() {
 		if (task) {
 			task.isDone = isDone
 			// засетаем в стейт копию объекта, чтобы React отреагировал перерисовкой
+
 			setTasks({ ...tasks })
 		}
 	}
