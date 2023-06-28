@@ -17,9 +17,9 @@ export type AddTaskActionType = {
 }
 export type ChangeTaskStatusActionType = {
 	type: 'CHANGE-TASK-STATUS'
+	todoListId: string
 	id: string
 	status: boolean
-	todoListId: string
 }
 export type ChangeTaskTitleActionType = {
 	type: 'CHANGE-TASK-TITLE'
@@ -37,7 +37,7 @@ export type ActionType =
 	| RemoveTodoListActionType
 
 export const tasksReducer = (
-	tasks: TasksStateType,
+	tasks: TasksStateType = {},
 	action: ActionType
 ): TasksStateType => {
 	switch (action.type) {

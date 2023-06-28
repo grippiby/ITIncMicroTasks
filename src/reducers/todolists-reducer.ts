@@ -28,7 +28,7 @@ export type ActionType =
 	| ChangeTodoListFilterAT
 
 export const todolistsReducer = (
-	todoLists: TodolistType[],
+	todoLists: TodolistType[] = [],
 	action: ActionType
 ): TodolistType[] => {
 	switch (action.type) {
