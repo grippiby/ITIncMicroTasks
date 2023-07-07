@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94cca38b-cd82-4476-a990-5a26b68bdb64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Task.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TodoListRedux.tsxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/task-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/task-reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/todolists-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/todolists-reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditableSpan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Todolist.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="tsconfig.json" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -37,6 +41,9 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProjectId" id="2RZYp1vQ0Q9LNMrrqjqVErV5yvV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,7 +54,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/1_DarkTow/2_incubator/1-todolist/src/reducers&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/1_DarkTow/2_incubator/1-todolist/src&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -72,22 +79,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\1_DarkTow\2_incubator\1-todolist\src" />
+      <recent name="D:\1_DarkTow\2_incubator\1-todolist\src\reducers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\1_DarkTow\2_incubator\1-todolist\src\reducers" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.change task title">
-    <configuration name="change task title" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/reducers/task-reducer.test.ts" />
-      <test-names>
-        <test-name value="change task title" />
-      </test-names>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Jest.status of specified task should be changed">
     <configuration name="correct filter of todolist should be changed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
@@ -100,19 +99,7 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="ids should be equals" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/reducers/lesson_8/todolists-tasks-reducer.test.ts" />
-      <test-names>
-        <test-name value="ids should be equals" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="new array should be added when new todolist is added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="correct task should be added to correct array" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
@@ -120,11 +107,11 @@
       <scope-kind value="TEST" />
       <test-file value="$PROJECT_DIR$/src/reducers/task-reducer.test.ts" />
       <test-names>
-        <test-name value="new array should be added when new todolist is added" />
+        <test-name value="correct task should be added to correct array" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="property with todolistId should be deleted" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="correct task should be deleted from correct array" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
@@ -132,17 +119,41 @@
       <scope-kind value="TEST" />
       <test-file value="$PROJECT_DIR$/src/reducers/task-reducer.test.ts" />
       <test-names>
-        <test-name value="property with todolistId should be deleted" />
+        <test-name value="correct task should be deleted from correct array" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="correct todolist should be added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/reducers/todolists-reducer.test.ts" />
+      <test-names>
+        <test-name value="correct todolist should be added" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="status of specified task should be changed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/reducers/task-reducer.test.ts" />
+      <test-names>
+        <test-name value="status of specified task should be changed" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.property with todolistId should be deleted" />
+        <item itemvalue="Jest.status of specified task should be changed" />
+        <item itemvalue="Jest.correct task should be added to correct array" />
+        <item itemvalue="Jest.correct task should be deleted from correct array" />
         <item itemvalue="Jest.correct filter of todolist should be changed" />
-        <item itemvalue="Jest.ids should be equals" />
-        <item itemvalue="Jest.new array should be added when new todolist is added" />
-        <item itemvalue="Jest.change task title" />
+        <item itemvalue="Jest.correct todolist should be added" />
       </list>
     </recent_temporary>
   </component>
@@ -166,6 +177,12 @@
       <workItem from="1687852899432" duration="1300000" />
       <workItem from="1687863745149" duration="628000" />
       <workItem from="1687888584805" duration="46000" />
+      <workItem from="1687964411522" duration="9873000" />
+      <workItem from="1688054357262" duration="12000" />
+      <workItem from="1688070009204" duration="1059000" />
+      <workItem from="1688146808521" duration="269000" />
+      <workItem from="1688738013685" duration="3148000" />
+      <workItem from="1688755183901" duration="3542000" />
     </task>
     <servers />
   </component>
@@ -193,6 +210,18 @@
           <url>file://$PROJECT_DIR$/src/reducers/tasks-reducer.ts</url>
           <line>30</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/AppWithRedux.tsx</url>
+          <line>52</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/EditableSpan.tsx</url>
+          <line>8</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
