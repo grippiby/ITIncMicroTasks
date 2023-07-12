@@ -1,12 +1,12 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
+import { ChangeEvent, KeyboardEvent, memo, useState } from 'react'
 import { IconButton, TextField } from '@mui/material'
 import { AddBox } from '@mui/icons-material'
 
-type AddItemFormPropsType = {
+export type AddItemFormPropsType = {
 	addItem: (title: string) => void
 }
 
-export const AddItemForm = React.memo((props: AddItemFormPropsType) => {
+export const AddItemForm = memo((props: AddItemFormPropsType) => {
 	console.log('adItemForm render')
 	let [title, setTitle] = useState('')
 	let [error, setError] = useState<string | null>(null)
