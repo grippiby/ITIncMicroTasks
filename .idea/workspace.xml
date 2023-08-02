@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94cca38b-cd82-4476-a990-5a26b68bdb64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/integration/additemform.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration/setupTests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stories/AddItemForm.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stories/AppWithRedux.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stories/EditableSpan.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stories/Task.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stories/decorators/ReduxStoreProviderDecorator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/tasks-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/todolist-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stories/tasks-api.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stories/todolists-api.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +21,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="tsconfig.json" />
         <option value="JavaScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -47,6 +39,9 @@
   </component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2RZYp1vQ0Q9LNMrrqjqVErV5yvV" />
   <component name="ProjectLevelVcsManager">
@@ -98,19 +93,7 @@
       <recent name="D:\1_DarkTow\2_incubator\1-todolist\src\reducers" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.status of specified task should be changed">
-    <configuration name="correct filter of todolist should be changed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/reducers/todolists-reducer.test.ts" />
-      <test-names>
-        <test-name value="correct filter of todolist should be changed" />
-      </test-names>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.storybook">
     <configuration name="correct task should be added to correct array" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
@@ -157,13 +140,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="storybook" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="storybook" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.storybook" />
         <item itemvalue="npm.jest:integration" />
         <item itemvalue="Jest.status of specified task should be changed" />
         <item itemvalue="Jest.correct task should be added to correct array" />
         <item itemvalue="Jest.correct task should be deleted from correct array" />
-        <item itemvalue="Jest.correct filter of todolist should be changed" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +193,13 @@
       <workItem from="1689092261737" duration="115000" />
       <workItem from="1689175193649" duration="4765000" />
       <workItem from="1689180388385" duration="6017000" />
-      <workItem from="1689189565396" duration="927000" />
+      <workItem from="1689189565396" duration="1353000" />
+      <workItem from="1689582474044" duration="40000" />
+      <workItem from="1689655871052" duration="227000" />
+      <workItem from="1689861433139" duration="212000" />
+      <workItem from="1689865661801" duration="10847000" />
+      <workItem from="1690402669609" duration="169000" />
+      <workItem from="1690974900473" duration="5201000" />
     </task>
     <servers />
   </component>
@@ -261,8 +260,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/stories/Task.stories.tsx</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.tsx</url>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
