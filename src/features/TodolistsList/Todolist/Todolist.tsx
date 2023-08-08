@@ -4,11 +4,11 @@ import {EditableSpan} from '../../../components/EditableSpan/EditableSpan'
 import {Task} from './Task/Task'
 import {TaskStatuses, TaskType} from '../../../api/todolists-api'
 import {FilterValuesType} from '../todolists-reducer'
-import {fetchTasksTC} from '../tasks-reducer'
+import {fetchTasksTC, TasksStateType} from '../tasks-reducer'
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import {Delete} from '@mui/icons-material';
-import {useAppDispatch} from "../../../app/store";
+import {useAppDispatch, useAppSelector} from "../../../app/store";
 import {RequestStatusType} from '../../../app/app-reducer';
 
 type PropsType = {
@@ -28,9 +28,9 @@ type PropsType = {
 }
 
 export const Todolist = React.memo(function (props: PropsType) {
-    /* console.log('Todolist called')*/
-    console.log(props.entityStatus)
+    const tasks = useAppSelector<TasksStateType>(state => state.tasks)
     const dispatch = useAppDispatch()
+
 
     useEffect(() => {
         const thunk = fetchTasksTC(props.id)
@@ -61,11 +61,13 @@ export const Todolist = React.memo(function (props: PropsType) {
     if (props.filter === 'completed') {
         tasksForTodolist = props.tasks.filter(t => t.status === TaskStatuses.Completed)
     }
-
+    /*    if (props.entityStatus) {
+            tasksForTodolist = props.tasks.map(t => t.entityStatus === 'loading' ? t.entityStatus = 'loading' : t.entityStatus = 'idle')
+        }*/
     return <div>
 
         <h3><EditableSpan value={props.title} onChange={changeTodolistTitle}
-            /* disabled={props.entityStatus === 'loading'}*//>
+        />
             <IconButton onClick={removeTodolist} disabled={props.entityStatus === 'loading'}>
                 <Delete/>
             </IconButton>
@@ -77,6 +79,7 @@ export const Todolist = React.memo(function (props: PropsType) {
                                                 removeTask={props.removeTask}
                                                 changeTaskTitle={props.changeTaskTitle}
                                                 changeTaskStatus={props.changeTaskStatus}
+                                                entityStatus={t.entityStatus}
                 />)
             }
         </div>

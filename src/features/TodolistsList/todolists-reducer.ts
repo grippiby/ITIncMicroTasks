@@ -23,7 +23,6 @@ export const todolistsReducer = (state: Array<TodolistDomainType> = initialState
             return state
     }
 }
-
 // actions
 export const removeTodolistAC = (id: string) => ({type: 'REMOVE-TODOLIST', id} as const)
 export const addTodolistAC = (todolist: TodolistType) => ({type: 'ADD-TODOLIST', todolist} as const)
@@ -62,15 +61,16 @@ export const removeTodolistTC = (todolistId: string) => {
         dispatch(changeTodolistEntityStatusAC(todolistId, 'loading'))
         todolistsAPI.deleteTodolist(todolistId)
             .then((res) => {
-
                 if (res.data.resultCode === 0) {
                     dispatch(removeTodolistAC(todolistId))
                     dispatch(setAppStatusAC('succeeded'))
                 } else {
                     handleServerAppError(res.data, dispatch)
+                    dispatch(changeTodolistEntityStatusAC(todolistId, 'failed'))
                 }
             }).catch((err) => {
             handleServerNetworkError(err, dispatch)
+            dispatch(changeTodolistEntityStatusAC(todolistId, 'failed'))
         })
     }
 }

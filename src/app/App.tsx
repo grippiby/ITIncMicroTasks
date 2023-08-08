@@ -20,7 +20,6 @@ import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar';
 
 function App() {
     const status = useAppSelector<RequestStatusType>(state => state.app.status)
-
     const dispatch = useAppDispatch()
 
     return (
