@@ -5,85 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="039606b9-947c-4588-8e0b-fbd1065a78e6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app-reducer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/1-todolist.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/preview.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-1stweek-UniversalButton.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-2ndweek-UniversaInput.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-3rdweekMiniTasks-2(more tasks).zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-3rdweekMiniTasks.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-4thweekMiniTasks.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-afterLesson2-filter.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-afterLesson3.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-afterLesson4.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-afterLesson5-ассоциативный массив.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-afterLesson6.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backups/src-afterLesson8.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/__image_snapshots__/__diff_output__/additemform-test-js-add-item-form-base-example-visually-looks-correct-1-snap-diff.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/__image_snapshots__/additemform-test-js-add-item-form-base-example-visually-looks-correct-1-snap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/additemform.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/jest.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithReducer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithRedux.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListRedux.tsxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/tasks-api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/todolist-api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddItemForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditableSpan.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Todolist.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/lesson_8/lesson_8.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/lesson_8/lesson_8.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/task-reducer.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/tasks-reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/todolists-reducer.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/todolists-reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/todolists-tasks-reducer.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/AddItemForm.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/AppWithRedux.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Button.stories.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/EditableSpan.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Header.stories.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Introduction.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Page.stories.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/Task.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/assets/code-brackets.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/assets/colors.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/assets/comments.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/assets/direction.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/assets/flow.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/assets/plugin.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/assets/repo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/assets/stackalt.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/button.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/decorators/ReduxStoreProviderDecorator.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/page.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/tasks-api.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/todolists-api.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -107,17 +64,18 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/1_DarkTow/2_incubator/1-todolist&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/1_DarkTow/2_incubator/1-todolist/src/app&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\gripp\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.rainbow.brackets&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\1_DarkTow\\2_incubator\\1-todolist\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -135,6 +93,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\1_DarkTow\2_incubator\1-todolist\src\app" />
       <recent name="D:\1_DarkTow\2_incubator\1-todolist" />
     </key>
   </component>
@@ -149,6 +108,10 @@
       <workItem from="1691179710463" duration="143000" />
       <workItem from="1691218841658" duration="16217000" />
       <workItem from="1691268445687" duration="1763000" />
+      <workItem from="1691401236861" duration="603000" />
+      <workItem from="1691408264913" duration="305000" />
+      <workItem from="1691408580820" duration="1175000" />
+      <workItem from="1691409788721" duration="10260000" />
     </task>
     <servers />
   </component>
@@ -159,5 +122,21 @@
     <option featureType="dependencySupport" implementationName="javascript:npm:react" />
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/App.tsx</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/features/TodolistsList/tasks-reducer.ts</url>
+          <line>104</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
