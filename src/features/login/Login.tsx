@@ -22,9 +22,9 @@ export const Login = () => {
   const dispatch = useAppDispatch();
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
   /*  const myState = useSelector<AppRootStateType, boolean>(
-          (state) => state.auth.isLoggedIn
-        );
-        console.log("lll", myState);*/
+            (state) => state.auth.isLoggedIn
+          );
+          console.log("lll", myState);*/
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -51,7 +51,7 @@ export const Login = () => {
       formik.resetForm();
     },
   });
-  console.log(isLoggedIn);
+
   if (isLoggedIn) {
     return <Navigate to={"/"} />;
   }
@@ -81,8 +81,8 @@ export const Login = () => {
                 label="Email"
                 margin="normal"
                 /*name={"email"}
-                                                                                                                                                                                                                                                                                                                                                                                                                onChange={formik.handleChange}
-                                                                                                                                                                                                                                                                                                                                                                                                                value={formik.values.email}*/
+                                                                                                                                                                                                                                                                                                                                                                                                                                onChange={formik.handleChange}
+                                                                                                                                                                                                                                                                                                                                                                                                                                value={formik.values.email}*/
                 {...formik.getFieldProps("email")}
                 onBlur={formik.handleBlur}
               />
