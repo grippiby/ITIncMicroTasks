@@ -1,104 +1,104 @@
-import {todolistsAPI, TodolistType} from '../../api/todolists-api'
-import {Dispatch} from 'redux'
-import {RequestStatusType, setAppStatusAC, SetAppStatusActionType} from '../../app/app-reducer'
+import { todolistsAPI, TodolistType } from 'api/todolists-api'
+import { Dispatch } from 'redux'
+import { appActions, RequestStatusType } from 'app/app-reducer'
+import { handleServerNetworkError } from 'utils/error-utils'
+import { AppThunk } from 'app/store'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const initialState: Array<TodolistDomainType> = []
 
-export const todolistsReducer = (state: Array<TodolistDomainType> = initialState, action: ActionsType): Array<TodolistDomainType> => {
-    switch (action.type) {
-        case 'REMOVE-TODOLIST':
-            return state.filter(tl => tl.id !== action.id)
-        case 'ADD-TODOLIST':
-            return [{...action.todolist, filter: 'all', entityStatus: 'idle'}, ...state]
+const slice = createSlice({
+	name: 'todolists',
+	initialState: [] as TodolistDomainType[],
+	reducers: {
+		addTodolist: (state, action: PayloadAction<{ todolist: TodolistType }>) => {
+			state.unshift({ ...action.payload.todolist, filter: 'all', entityStatus: 'idle' })
+		},
+		removeTodolist: (state, action: PayloadAction<{ id: string }>) => {
+			/*return state.filter((tl) => tl.id != action.payload.id)*/
+			const i = state.findIndex((todo) => todo.id === action.payload.id)
+			if (i !== -1) state.splice(i, 1)
+		},
+		changeTodolistTitle: (state, action: PayloadAction<{ id: string; title: string }>) => {
+			const i = state.findIndex((todo) => todo.id === action.payload.id)
+			if (i !== -1) state[i].title = action.payload.title
 
-        case 'CHANGE-TODOLIST-TITLE':
-            return state.map(tl => tl.id === action.id ? {...tl, title: action.title} : tl)
-        case 'CHANGE-TODOLIST-FILTER':
-            return state.map(tl => tl.id === action.id ? {...tl, filter: action.filter} : tl)
-        case 'CHANGE-TODOLIST-ENTITY-STATUS':
-            return state.map(tl => tl.id === action.id ? {...tl, entityStatus: action.status} : tl)
-        case 'SET-TODOLISTS':
-            return action.todolists.map(tl => ({...tl, filter: 'all', entityStatus: 'idle'}))
-        default:
-            return state
-    }
-}
+			/*	const el = state.find((todo) => todo.id === action.payload.id)
+				if(el){
+									el.title=action.payload.title
+				}*/
+		},
+		changeTodolistFilter: (state, action: PayloadAction<{ id: string; filter: FilterValuesType }>) => {
+			const el = state.find((todo) => todo.id === action.payload.id)
+			if (el) {
+				el.filter = action.payload.filter
+			}
+		},
+		changeTodolistEntityStatus: (state, action: PayloadAction<{ id: string; status: RequestStatusType }>) => {
+			const el = state.find((todo) => todo.id === action.payload.id)
+			console.log()
+			if (el) {
+				el.entityStatus = action.payload.status
+			}
+		},
+		setTodolists: (state, action: PayloadAction<{ todolists: TodolistType[] }>) => {
+			//НЕЛЬЗЯ менять весь стейт, но можно ретурнуть пейлоадл
+			/*state = action.payload.todolists*/
+			return action.payload.todolists.map((tl) => ({ ...tl, filter: 'all', entityStatus: 'idle' }))
+		},
+	},
+})
 
-// actions
-export const removeTodolistAC = (id: string) => ({type: 'REMOVE-TODOLIST', id} as const)
-export const addTodolistAC = (todolist: TodolistType) => ({type: 'ADD-TODOLIST', todolist} as const)
-export const changeTodolistTitleAC = (id: string, title: string) => ({
-    type: 'CHANGE-TODOLIST-TITLE',
-    id,
-    title
-} as const)
-export const changeTodolistFilterAC = (id: string, filter: FilterValuesType) => ({
-    type: 'CHANGE-TODOLIST-FILTER',
-    id,
-    filter
-} as const)
-export const changeTodolistEntityStatusAC = (id: string, status: RequestStatusType) => ({
-    type: 'CHANGE-TODOLIST-ENTITY-STATUS', id, status } as const)
-export const setTodolistsAC = (todolists: Array<TodolistType>) => ({type: 'SET-TODOLISTS', todolists} as const)
-
+export const todolistsAction = slice.actions
+export const todolistsReducer = slice.reducer
 // thunks
-export const fetchTodolistsTC = () => {
-    return (dispatch: ThunkDispatch) => {
-        dispatch(setAppStatusAC('loading'))
-        todolistsAPI.getTodolists()
-            .then((res) => {
-                dispatch(setTodolistsAC(res.data))
-                dispatch(setAppStatusAC('succeeded'))
-            })
-    }
+export const fetchTodolistsTC = (): AppThunk => {
+	return (dispatch) => {
+		dispatch(appActions.setAppStatus({ status: 'loading' }))
+		todolistsAPI
+			.getTodolists()
+			.then((res) => {
+				dispatch(todolistsAction.setTodolists({ todolists: res.data }))
+				dispatch(appActions.setAppStatus({ status: 'succeeded' }))
+			})
+			.catch((error) => {
+				handleServerNetworkError(error, dispatch)
+			})
+	}
 }
 export const removeTodolistTC = (todolistId: string) => {
-    return (dispatch: ThunkDispatch) => {
-        //изменим глобальный статус приложения, чтобы вверху полоса побежала
-        dispatch(setAppStatusAC('loading'))
-        //изменим статус конкретного тудулиста, чтобы он мог задизеблить что надо
-        dispatch(changeTodolistEntityStatusAC(todolistId, 'loading'))
-        todolistsAPI.deleteTodolist(todolistId)
-            .then((res) => {
-                dispatch(removeTodolistAC(todolistId))
-                //скажем глобально приложению, что асинхронная операция завершена
-                dispatch(setAppStatusAC('succeeded'))
-            })
-    }
+	return (dispatch: ThunkDispatch) => {
+		//изменим глобальный статус приложения, чтобы вверху полоса побежала
+		dispatch(appActions.setAppStatus({ status: 'loading' }))
+		//изменим статус конкретного тудулиста, чтобы он мог задизеблить что надо
+		dispatch(todolistsAction.changeTodolistEntityStatus({ id: todolistId, status: 'loading' }))
+		todolistsAPI.deleteTodolist(todolistId).then((res) => {
+			dispatch(todolistsAction.removeTodolist({ id: todolistId }))
+			//скажем глобально приложению, что асинхронная операция завершена
+			dispatch(appActions.setAppStatus({ status: 'succeeded' }))
+		})
+	}
 }
 export const addTodolistTC = (title: string) => {
-    return (dispatch: ThunkDispatch) => {
-        dispatch(setAppStatusAC('loading'))
-        todolistsAPI.createTodolist(title)
-            .then((res) => {
-                dispatch(addTodolistAC(res.data.data.item))
-                dispatch(setAppStatusAC('succeeded'))
-            })
-    }
+	return (dispatch: ThunkDispatch) => {
+		dispatch(appActions.setAppStatus({ status: 'loading' }))
+		todolistsAPI.createTodolist(title).then((res) => {
+			dispatch(todolistsAction.addTodolist({ todolist: res.data.data.item }))
+			dispatch(appActions.setAppStatus({ status: 'succeeded' }))
+		})
+	}
 }
 export const changeTodolistTitleTC = (id: string, title: string) => {
-    return (dispatch: Dispatch<ActionsType>) => {
-        todolistsAPI.updateTodolist(id, title)
-            .then((res) => {
-                dispatch(changeTodolistTitleAC(id, title))
-            })
-    }
+	return (dispatch: Dispatch) => {
+		todolistsAPI.updateTodolist(id, title).then((res) => {
+			dispatch(todolistsAction.changeTodolistTitle({ id: id, title: title }))
+		})
+	}
 }
 
-// types
-export type AddTodolistActionType = ReturnType<typeof addTodolistAC>;
-export type RemoveTodolistActionType = ReturnType<typeof removeTodolistAC>;
-export type SetTodolistsActionType = ReturnType<typeof setTodolistsAC>;
-type ActionsType =
-    | RemoveTodolistActionType
-    | AddTodolistActionType
-    | ReturnType<typeof changeTodolistTitleAC>
-    | ReturnType<typeof changeTodolistFilterAC>
-    | SetTodolistsActionType
-    | ReturnType<typeof changeTodolistEntityStatusAC>
-export type FilterValuesType = 'all' | 'active' | 'completed';
+export type FilterValuesType = 'all' | 'active' | 'completed'
 export type TodolistDomainType = TodolistType & {
-    filter: FilterValuesType
-    entityStatus: RequestStatusType
+	filter: FilterValuesType
+	entityStatus: RequestStatusType
 }
-type ThunkDispatch = Dispatch<ActionsType | SetAppStatusActionType>
+type ThunkDispatch = Dispatch
