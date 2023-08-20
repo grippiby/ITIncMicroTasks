@@ -46,6 +46,11 @@ const slice = createSlice({
 			/*state = action.payload.todolists*/
 			return action.payload.todolists.map((tl) => ({ ...tl, filter: 'all', entityStatus: 'idle' }))
 		},
+		clearTodoLists: () => {
+			return []
+		},
+		// @ts-ignore
+		logout: (state) => ({}),
 	},
 })
 

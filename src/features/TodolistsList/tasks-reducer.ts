@@ -11,11 +11,18 @@ const slice = createSlice({
 	name: 'tasks',
 	initialState: {} as TasksStateType,
 	reducers: {
+		/*	removeTask: (state, action: PayloadAction<{ taskId: string; todolistId: string }>) => {
+				const tasks = state[action.payload.todolistId]
+				const index = tasks.findIndex((t) => t.id === action.payload.taskId)
+				if (index !== -1) tasks.splice(index, 1)
+			},*/
+
 		removeTask: (state, action: PayloadAction<{ todolistId: string; taskId: string }>) => {
 			const tasks4TodoList = state[action.payload.todolistId]
 
 			const i = tasks4TodoList.findIndex((t) => t.id === action.payload.taskId)
 			if (i !== -1) tasks4TodoList.splice(i, 1)
+
 			/*return {
 				...state,
 				[action.payload.todolistId]: state[action.payload.todolistId].filter(
@@ -50,6 +57,11 @@ const slice = createSlice({
 		setTasks: (state, action: PayloadAction<{ tasks: Array<TaskType>; todolistId: string }>) => {
 			state[action.payload.todolistId] = action.payload.tasks
 		},
+
+		/*logout: (state) => ({}),*/
+		clearTasks: () => {
+			return {}
+		},
 	},
 	extraReducers: (builder) => {
 		builder
@@ -60,7 +72,7 @@ const slice = createSlice({
 				delete state[action.payload.id]
 			})
 			.addCase(todolistsAction.setTodolists, (state, action) => {
-				action.payload.todolists.forEach((el) => (state[el.id] = []))
+				action.payload.todolists.forEach((el: any) => (state[el.id] = []))
 			})
 	},
 })
